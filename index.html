@@ -99,6 +99,15 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* 幅600px以下の画面では掲載日時列を非表示にする */
+    @media (max-width: 600px) {
+      th:nth-child(3),  /* thead の 3列目 */
+      td.date {          /* tbody の .date クラス */
+        display: none;
+      }
+    }
+
   </style>
 </head>
 
