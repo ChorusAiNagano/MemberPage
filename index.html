@@ -21,22 +21,29 @@
       color: #222;
     }
 
-    .year-block {
+    details {
       margin-bottom: 40px;
     }
 
-    .year-title {
+    summary {
       font-size: 1.4rem;
       font-weight: 600;
       margin-bottom: 15px;
       padding-bottom: 5px;
       border-bottom: 2px solid #ddd;
       color: #444;
+      cursor: pointer;
+      outline: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
     }
 
     .table-wrapper {
       overflow-x: auto;
       max-width: 100%;
+      margin-top: 10px;
     }
 
     table {
@@ -65,14 +72,22 @@
       border-bottom: none;
     }
 
-    /* ▼ 列ごとの設定 */
     td.name {
-      white-space: normal;  /* 折り返しOK */
+      white-space: normal;
     }
 
     td.date,
     td.link {
-      white-space: nowrap;  /* 折り返しNG → 幅は自動調整 */
+      white-space: nowrap;
+    }
+
+    /* Newラベル用 */
+    td.new {
+      width: 50px;
+      text-align: center;
+      font-weight: bold;
+      color: #e74c3c;
+      border-radius: 4px;
     }
 
     a {
@@ -91,60 +106,116 @@
 
   <h1>合唱団あい 団員向け資料リンク集</h1>
 
-  <!-- ▼▼ 2024 年度 ▼▼ -->
-  <div class="year-block">
-    <div class="year-title">2024 年度</div>
-
+  <!-- ▼▼ 2026 年度 ▼▼ -->
+  <details open>
+    <summary>第43回定期演奏会（2026年）</summary>
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
+            <th></th>
             <th>資料名</th>
             <th>掲載日時</th>
             <th>リンク</th>
           </tr>
         </thead>
-
         <tbody>
           <tr>
-            <td class="name">企画書 A とても長い資料名が入った場合にどうなるのかのテストも兼ねています</td>
-            <td class="date">2024/5/10</td>
-            <td class="link"><a href="https://drive.google.com/xxxxxxxx">開く</a></td>
-          </tr>
-          <tr>
-            <td class="name">報告書 B</td>
-            <td class="date">2024/4/02</td>
-            <td class="link"><a href="https://drive.google.com/yyyyyyyy">開く</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- ▼▼ 2023 年度 ▼▼ -->
-  <div class="year-block">
-    <div class="year-title">2023 年度</div>
-
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>資料名</th>
-            <th>掲載日時</th>
-            <th>リンク</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td class="name">マニュアル C</td>
+            <td class="new">New</td>
+            <td class="name">A Little Jazz Mass 英文翻訳</td>
             <td class="date">2023/12/20</td>
-            <td class="link"><a href="https://drive.google.com/zzzzzzzz">開く</a></td>
+            <td class="link"><a href="https://drive.google.com/file/d/13NZwDRcL_k95lDWGYs3I45cUiBZpLabg/view?usp=drive_link">開く</a></td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
+  </details>
+
+  <!-- ▼▼ 2025 年度 ▼▼ -->
+  <details open>
+    <summary>第42回定期演奏会（2025年）</summary>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>資料名</th>
+            <th>掲載日時</th>
+            <th>リンク</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="new">New</td>
+            <td class="name">演奏音源（正式版）</td>
+            <td class="date">2025/11/9</td>
+            <td class="link"><a href="https://drive.google.com/drive/folders/1QOQIuUX_cyMSB_9ncNTRYskqSqL3DD9p?usp=drive_link">開く</a></td>
+          </tr>
+          <tr>
+            <td class="new">New</td>
+            <td class="name">プログラム</td>
+            <td class="date">2025/11/5</td>
+            <td class="link"><a href="https://drive.google.com/file/d/1ENC7a4oW45pETEgJxkMk_IwISqGStIZv/view?usp=drive_link">開く</a></td>
+          </tr>
+          <tr>
+            <td class="new">New</td>
+            <td class="name">アンケート集計結果</td>
+            <td class="date">2025/11/3</td>
+            <td class="link"><a href="https://drive.google.com/file/d/1T3HzmLdyFyHSxuf7by-yPNEpqDX92xZ7/view?usp=drive_link">開く</a></td>
+          </tr>
+          <tr>
+            <td class="new"></td>
+            <td class="name">音取り音源</td>
+            <td class="date">2025/2/12</td>
+            <td class="link"><a href="https://drive.google.com/drive/folders/1pQgpWoen7_cl7UsxDdwOfSMvbcWq7jfg?usp=drive_link">開く</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <!-- ▼▼ 共通 ▼▼ -->
+  <details open>
+    <summary>共通</summary>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>資料名</th>
+            <th>掲載日時</th>
+            <th>リンク</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="new">New</td>
+            <td class="name">ミサ歌詞カード</td>
+            <td class="date">2025/11/16</td>
+            <td class="link"><a href="https://drive.google.com/file/d/1I-YmDk4dZhBJv9dld0z1zbk4Xi6bT-6b/view?usp=drive_link">開く</a></td>
+          </tr>
+          <tr>
+            <td class="new">New</td>
+            <td class="name">ミサ歌詞カード（禁断のカタカナ版）</td>
+            <td class="date">2025/11/16</td>
+            <td class="link"><a href="https://drive.google.com/file/d/168lN3VkgVW5tUpLNN3ksbJYzClfBOv9h/view?usp=drive_link">開く</a></td>
+          </tr>
+          <tr>
+            <td class="new"></td>
+            <td class="name">発音表（教会式ラテン語）</td>
+            <td class="date">2025/2/17</td>
+            <td class="link"><a href="https://drive.google.com/file/d/1it8sFklcrHIgZA4ipiAVDslLjbCTHaOg/view?usp=drive_link">開く</a></td>
+          </tr>
+          <tr>
+            <td class="new"></td>
+            <td class="name">発音表（英語）</td>
+            <td class="date">2025/2/2</td>
+            <td class="link"><a href="https://drive.google.com/file/d/12aTDaaxVv_4U2tLJY_Cqq2McOe4d2aB9/view?usp=drive_link">開く</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
 
 </body>
 </html>
