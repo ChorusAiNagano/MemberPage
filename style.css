@@ -1,0 +1,105 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f7f8fa;
+  margin: 0;
+  padding: 20px;
+  max-width: 1000px;   /* ページ全体の最大幅 */
+  margin-left: auto;    /* 左右中央寄せ */
+  margin-right: auto;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+details {
+  margin-bottom: 40px;
+}
+
+summary {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #ddd;
+  color: #444;
+  cursor: pointer;
+  outline: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f0f2f5;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td.name {
+  white-space: normal;
+}
+
+td.date,
+td.link {
+  white-space: nowrap;
+}
+
+/* Newラベル用 */
+td.new {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: #e74c3c;
+  border-radius: 4px;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 幅600px以下の画面では掲載日時列を非表示にする */
+@media (max-width: 600px) {
+  th:nth-child(3),  /* thead の 3列目 */
+  td.date {          /* tbody の .date クラス */
+    display: none;
+  }
+}
