@@ -26,7 +26,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="new">New</td>
+            <td class="new"></td>
             <td class="name">A Little Jazz Mass 英文翻訳</td>
             <td class="date">2023/12/20</td>
             <td class="link"><a href="https://drive.google.com/file/d/13NZwDRcL_k95lDWGYs3I45cUiBZpLabg/view?usp=drive_link">開く</a></td>
@@ -51,19 +51,19 @@
         </thead>
         <tbody>
           <tr>
-            <td class="new">New</td>
+            <td class="new"></td>
             <td class="name">演奏音源（正式版）</td>
             <td class="date">2025/11/9</td>
             <td class="link"><a href="https://drive.google.com/drive/folders/1QOQIuUX_cyMSB_9ncNTRYskqSqL3DD9p?usp=drive_link">開く</a></td>
           </tr>
           <tr>
-            <td class="new">New</td>
+            <td class="new"></td>
             <td class="name">プログラム</td>
             <td class="date">2025/11/5</td>
             <td class="link"><a href="https://drive.google.com/file/d/1ENC7a4oW45pETEgJxkMk_IwISqGStIZv/view?usp=drive_link">開く</a></td>
           </tr>
           <tr>
-            <td class="new">New</td>
+            <td class="new"></td>
             <td class="name">アンケート集計結果</td>
             <td class="date">2025/11/3</td>
             <td class="link"><a href="https://drive.google.com/file/d/1T3HzmLdyFyHSxuf7by-yPNEpqDX92xZ7/view?usp=drive_link">開く</a></td>
@@ -94,13 +94,13 @@
         </thead>
         <tbody>
           <tr>
-            <td class="new">New</td>
+            <td class="new"></td>
             <td class="name">ミサ歌詞カード</td>
             <td class="date">2025/11/16</td>
             <td class="link"><a href="https://drive.google.com/file/d/1I-YmDk4dZhBJv9dld0z1zbk4Xi6bT-6b/view?usp=drive_link">開く</a></td>
           </tr>
           <tr>
-            <td class="new">New</td>
+            <td class="new"></td>
             <td class="name">ミサ歌詞カード（禁断のカタカナ版）</td>
             <td class="date">2025/11/16</td>
             <td class="link"><a href="https://drive.google.com/file/d/168lN3VkgVW5tUpLNN3ksbJYzClfBOv9h/view?usp=drive_link">開く</a></td>
@@ -122,5 +122,37 @@
     </div>
   </details>
 
+  <script>
+    // 現在の日時から1ヶ月以内なら「New」を自動表示
+    function updateNewBadges() {
+      const now = new Date();
+      const oneMonthAgo = new Date(now.getFullYear(), now.getMonth() - 1, now.getDate());
+      
+      // すべての行を取得
+      const rows = document.querySelectorAll('tbody tr');
+      
+      rows.forEach(row => {
+        const dateCell = row.querySelector('td.date');
+        const newCell = row.querySelector('td.new');
+        
+        if (dateCell && newCell) {
+          const dateText = dateCell.textContent.trim();
+          // 日付をパース（YYYY/MM/DD形式）
+          const [year, month, day] = dateText.split('/').map(Number);
+          const rowDate = new Date(year, month - 1, day);
+          
+          // 1ヶ月以内ならNewバッジを表示
+          if (rowDate >= oneMonthAgo) {
+            newCell.textContent = 'New';
+          } else {
+            newCell.textContent = '';
+          }
+        }
+      });
+    }
+    
+    // ページ読み込み時に実行
+    document.addEventListener('DOMContentLoaded', updateNewBadges);
+  </script>
 </body>
 </html>
